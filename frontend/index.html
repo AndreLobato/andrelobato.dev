@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andre Lobato - Senior Python Developer</title>
+    <script defer data-domain="andrelobato.dev" src="https://plausible.io/js/script.js"></script>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdhrgsrAAAAAPII4HF2pHn2BVKdxQwjmn7T8Vxk"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="main">
+        <div class="card animate-fade-in">
+            <div class="card-content">
+                <div class="icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="terminal-icon">
+                        <polyline points="4 17 10 11 4 5"></polyline>
+                        <line x1="12" y1="19" x2="20" y2="19"></line>
+                    </svg>
+                </div>
+                <h1>Andre Lobato</h1>
+                <p class="description">
+                    Senior Python Developer passionate about building efficient, scalable, and maintainable systems. I help startups and teams ship better and faster.
+                </p>
+                <div class="services">
+                    <p>> Services I offer:</p>
+                    <ul>
+                        <li>Backend development</li>
+                        <li>API design and integration</li>
+                        <li>System architecture consulting</li>
+                        <li>Code reviews and mentorship</li>
+                    </ul>
+                </div>
+                <div class="button-container">
+                    <button class="contact-button" onclick="openDialog()">Contact Me</button>
+                    <button class="meeting-button" onclick="window.open('https://calendly.com/andre-ocean-123/30min')">Schedule a Meeting</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="dialogOverlay" class="dialog-overlay">
+            <div class="dialog">
+                <div class="dialog-header">
+                    <h2>Contact Andre</h2>
+                </div>
+                <form id="contactForm" class="contact-form">
+                    <input type="email" name="email" placeholder="Your email" required>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea name="message" placeholder="Your message..." required></textarea>
+                    <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+                    <button type="submit" class="submit-button">Send</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
