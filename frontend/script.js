@@ -1,22 +1,48 @@
 function openDialog() {
-    const dialog = document.getElementById('dialogOverlay');
-    dialog.style.display = 'flex';
+    document.getElementById('dialogOverlay').style.display = 'flex';
 }
 
 function closeDialog() {
-    const dialog = document.getElementById('dialogOverlay');
-    dialog.style.display = 'none';
+    document.getElementById('dialogOverlay').style.display = 'none';
 }
 
-// Close dialog when clicking outside
-document.getElementById('dialogOverlay').addEventListener('click', (e) => {
-    if (e.target === document.getElementById('dialogOverlay')) {
-        closeDialog();
-    }
-});
+function openThankYouDialog() {
+    document.getElementById('thankYouOverlay').style.display = 'flex';
+}
+
+function closeThankYouDialog() {
+    document.getElementById('thankYouOverlay').style.display = 'none';
+}
 
 // Handle form submission
-document.getElementById('contactForm').addEventListener('submit', async (e) => {
+document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    closeDialog();
+    
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            closeDialog();
+            form.reset();
+            openThankYouDialog();
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+// Close dialogs when clicking outside
+document.querySelectorAll('.dialog-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.style.display = 'none';
+        }
+    });
 });

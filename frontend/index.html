@@ -51,9 +51,22 @@
                     <input type="text" name="phone" placeholder="Your phone number">
                     <input type="text" name="subject" placeholder="Subject" required>
                     <textarea name="message" placeholder="Your message..." required></textarea>
+                    <input type="hidden" name="redirect" value="this-is-a-test">
                     <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                     <button type="submit" class="submit-button">Send</button>
                 </form>
+            </div>
+        </div>
+
+        <div id="thankYouOverlay" class="dialog-overlay">
+            <div class="dialog thank-you-dialog">
+                <div class="dialog-header">
+                    <h2>Thank You!</h2>
+                </div>
+                <div class="dialog-content">
+                    <p>I'll get back to you as soon as possible.</p>
+                    <button class="contact-button" onclick="closeThankYouDialog()">Close</button>
+                </div>
             </div>
         </div>
     </main>

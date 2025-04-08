@@ -166,3 +166,17 @@ h1 {
 .meeting-button:hover {
     background-color: var(--green-700);
 }
+
+.thank-you-dialog {
+    text-align: center;
+    padding: 2rem;
+}
+
+.thank-you-dialog p {
+    margin-bottom: 1.5rem;
+    color: var(--green-400);
+}
+
+.dialog-content {
+    padding: 1rem;
+}
