@@ -27,6 +27,13 @@ body {
     width: 100%;
     max-width: 36rem;
     text-align: center;
+    box-shadow: 0 0 15px rgba(134, 239, 172, 0.15); /* Subtle green glow using green-300 with low opacity */
+}
+
+/* Optional: Add hover effect to make the glow stronger */
+.card:hover {
+    box-shadow: 0 0 20px rgba(134, 239, 172, 0.25);
+    transition: box-shadow 0.3s ease;
 }
 
 .card-content {

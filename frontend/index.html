@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andre Lobato - Senior Python Developer</title>
     <script defer data-domain="andrelobato.dev" src="https://plausible.io/js/script.js"></script>
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdhrgsrAAAAAPII4HF2pHn2BVKdxQwjmn7T8Vxk"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -43,16 +42,22 @@
                 <div class="dialog-header">
                     <h2>Contact Andre</h2>
                 </div>
-                <form id="contactForm" class="contact-form">
+                <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="8d73b911-a1cd-4b23-91e0-fb813e7b4432">
+                    <input type="hidden" name="replyto" value="contact@andrelobato.dev">
                     <input type="email" name="email" placeholder="Your email" required>
+                    <input type="text" name="name" placeholder="Your name" required>
+                    <input type="text" name="company" placeholder="Your company">
+                    <input type="text" name="phone" placeholder="Your phone number">
                     <input type="text" name="subject" placeholder="Subject" required>
                     <textarea name="message" placeholder="Your message..." required></textarea>
-                    <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                     <button type="submit" class="submit-button">Send</button>
                 </form>
             </div>
         </div>
     </main>
     <script src="script.js"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>
