@@ -23,18 +23,28 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 
     fetch(form.action, {
         method: 'POST',
-        body: formData
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
     })
     .then(response => response.json())
     .then(data => {
-        if (data.success) {
+        // Web3Forms returns a status field instead of success
+        if (data.status === 'success') {
             closeDialog();
             form.reset();
-            openThankYouDialog();
+            setTimeout(() => {
+                openThankYouDialog();
+            }, 300); // Small delay to allow the first dialog to close
+        } else {
+            console.error('Form submission failed:', data);
+            alert('Failed to send message. Please try again.');
         }
     })
     .catch(error => {
         console.error('Error:', error);
+        alert('Failed to send message. Please try again.');
     });
 });
 
