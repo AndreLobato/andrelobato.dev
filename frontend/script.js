@@ -25,21 +25,27 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         method: 'POST',
         body: formData,
         headers: {
-            'Accept': 'application/json'
-        }
+            'Accept': 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        mode: 'cors'
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
     .then(data => {
-        // Web3Forms returns a status field instead of success
-        if (data.status === 'success') {
+        console.log('Response:', data); // Debug log
+        if (data.success) { // Web3Forms API returns success: true
             closeDialog();
             form.reset();
             setTimeout(() => {
                 openThankYouDialog();
-            }, 300); // Small delay to allow the first dialog to close
+            }, 300);
         } else {
-            console.error('Form submission failed:', data);
-            alert('Failed to send message. Please try again.');
+            throw new Error('Form submission failed');
         }
     })
     .catch(error => {
