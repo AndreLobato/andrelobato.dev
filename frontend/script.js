@@ -14,13 +14,6 @@ function closeThankYouDialog() {
     document.getElementById('thankYouOverlay').style.display = 'none';
 }
 
-// Handle form submission
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    closeDialog();
-    openThankYouDialog();
-});
-
 // Close dialogs when clicking outside
 document.querySelectorAll('.dialog-overlay').forEach(overlay => {
     overlay.addEventListener('click', (e) => {
