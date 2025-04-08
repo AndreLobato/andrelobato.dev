@@ -1,0 +1,23 @@
+{
+    auto_https off
+}
+
+
+https://www.andrelobato.dev, http://localhost {
+    root * /srv
+    encode gzip
+    file_server
+
+    handle /health {
+        respond "OK"
+    }
+    
+    handle /contact {
+        reverse_proxy backend:8080
+    }
+
+    handle_errors {
+        rewrite * /404.html
+        file_server
+    }
+}
