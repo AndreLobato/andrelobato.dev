@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andre Lobato - Senior Python Developer</title>
+    <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -14,6 +14,11 @@
 </head>
 <body>
     <main class="main">
+        <div class="language-switch">
+            <button id="langSwitch" onclick="toggleLanguage()">
+                <span id="langIndicator"></span>
+            </button>
+        </div>
         <div class="card animate-fade-in">
             <div class="card-content">
                 <div class="icon-container">
@@ -22,26 +27,16 @@
                         <line x1="12" y1="19" x2="20" y2="19"></line>
                     </svg>
                 </div>
-                <h1>Andre Lobato</h1>
-                <p class="description">
-		   Harnessing the powers of generative AI and implementing rigorous code-testing patterns, reproducible environments and efficient deployment strategies, as a Senior Software Engineer with more than 15 years of experience writing well-designed, hand-crafted code are now at your disposal to rapidly build your next venture!  Or perhaps to add that desired feature to your product! Or to build the next tool your team needs to succeed!
-
-I want to hear from you!
-                </p>
+                <h1 id="pageTitle"></h1>
+                <p id="pageDescription" class="description"></p>
+                <p id="pageClosure" class="description"></p>
                 <div class="services">
-                    <p> Services I offer:</p>
-                    <ul>
-                        <li>Platform Architecture and Design</li>
-                        <li>Cloud Engineer</li>
-                        <li>Backend Development (APIs, Databases, Data-processing)</li>
-                        <li>Mapping and Geospatial Applications</li>
-                        <li>AI-Agent Automation</li>
-			<li>CLI tooling</li>
-                    </ul>
+                    <p id="servicesTitle"></p>
+                    <ul id="servicesList"></ul>
                 </div>
                 <div class="button-container">
-                    <button class="contact-button" onclick="openDialog()">Contact Me</button>
-                    <button class="meeting-button" onclick="window.open('https://calendly.com/andre-ocean-123/30min')">Schedule a Meeting</button>
+                    <button id="contactButton" class="contact-button" onclick="openDialog()"></button>
+                    <button id="meetingButton" class="meeting-button" onclick="window.open('https://calendly.com/andre-ocean-123/30min')"></button>
                 </div>
             </div>
         </div>
@@ -49,7 +44,7 @@ I want to hear from you!
         <div id="dialogOverlay" class="dialog-overlay">
             <div class="dialog">
                 <div class="dialog-header">
-                    <h2>Contact Andre</h2>
+                    <h2 id="contactFormTitle"></h2>
                 </div>
                 <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="8d73b911-a1cd-4b23-91e0-fb813e7b4432">
@@ -70,16 +65,17 @@ I want to hear from you!
         <div id="thankYouOverlay" class="dialog-overlay">
             <div class="dialog thank-you-dialog">
                 <div class="dialog-header">
-                    <h2>Thank You!</h2>
+                    <h2 id="thankYouTitle"></h2>
                 </div>
                 <div class="dialog-content">
-                    <p>I'll get back to you as soon as possible.</p>
-                    <button class="contact-button" onclick="closeThankYouDialog()">Close</button>
+                    <p id="thankYouMessage"></p>
+                    <button id="closeButton" class="contact-button" onclick="closeThankYouDialog()"></button>
                 </div>
             </div>
         </div>
     </main>
     <script src="script.js"></script>
     <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script src="translations.js"></script>
 </body>
 </html>

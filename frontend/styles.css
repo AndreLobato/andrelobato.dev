@@ -198,3 +198,25 @@ h1 {
 .dialog-content {
     padding: 1rem;
 }
+
+.language-switch {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+.language-switch button {
+    background-color: var(--green-600);
+    color: black;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.language-switch button:hover {
+    background-color: var(--green-700);
+}
