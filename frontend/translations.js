@@ -8,8 +8,7 @@ const translations = {
         services: [
             "Platform Architecture and Design",
             "Cloud Engineer",
-            "Web Development",
-            "(APIs, Databases, Authentication, Data Processing, Frontend)",
+            "Backend Development (APIs, Databases, Data-processing)",
             "Mapping and Geospatial Applications",
             "AI-Agent Automation",
             "CLI tooling",
@@ -20,7 +19,17 @@ const translations = {
         contactFormTitle: "Contact Andre",
         thankYouTitle: "Thank You!",
         thankYouMessage: "I'll get back to you as soon as possible.",
-        closeButton: "Close"
+        closeButton: "Close",
+        form: {
+            email: "Your email",
+            name: "Your name",
+            company: "Your company (optional)",
+            phone: "Your phone number (optional)",
+            subject: "Subject",
+            message: "Your message...",
+            send: "Send",
+            required: "Required"
+        }
     },
     pt: {
         headTitle: "Andre Lobato - Engenheiro de Software Sênior",
@@ -31,11 +40,10 @@ const translations = {
         services: [
             "Arquitetura e Design de Plataformas",
             "Engenharia na Cloud",
-            "Desenvolvimento Web Full-Stack",
-            "(APIs, Bancos de Dados, Autenticação e Processamento de Dados, Frontend)",
-            "Aplicações Geoespaciais",
+            "Desenvolvimento Backend (APIs, Bancos de Dados, Processamento de Dados)",
+            "Aplicações de Mapeamento e Geoespaciais",
             "Automação com Agentes de IA",
-            "Ferramentas de Linha-de-Comando",
+            "Ferramentas de Linha de Comando",
             "Aulas de Programação"
         ],
         
@@ -44,6 +52,16 @@ const translations = {
         contactFormTitle: "Contato",
         thankYouTitle: "Obrigado!",
         thankYouMessage: "Retornarei assim que possível!",
-        closeButton: "Fechar"
+        closeButton: "Fechar",
+        form: {
+            email: "Seu email",
+            name: "Seu nome",
+            company: "Sua empresa (opcional)",
+            phone: "Seu telefone (opcional)",
+            subject: "Assunto",
+            message: "Sua mensagem...",
+            send: "Enviar",
+            required: "Obrigatório"
+        }
     }
 };

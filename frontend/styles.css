@@ -150,6 +150,34 @@ h1 {
     font-family: inherit;
 }
 
+.form-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    color: var(--green-400);
+    transition: all 0.2s;
+    pointer-events: none;
+}
+
+.form-group label.required::after {
+    content: " *";
+    color: var(--green-300);
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+    transform: translateY(-1.5rem);
+    font-size: 0.8rem;
+    color: var(--green-300);
+}
+
 .animate-fade-in {
     animation: fadeIn 0.6s ease-out;
 }

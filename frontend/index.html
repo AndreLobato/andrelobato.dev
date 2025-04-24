@@ -16,7 +16,7 @@
     <main class="main">
         <div class="language-switch">
             <button id="langSwitch" onclick="toggleLanguage()">
-                <span id="langIndicator"></span>
+                <span id="langIndicator">EN</span>
             </button>
         </div>
         <div class="card animate-fade-in">
@@ -49,12 +49,30 @@
                 <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="8d73b911-a1cd-4b23-91e0-fb813e7b4432">
                     <input type="hidden" name="replyto" value="contact@andrelobato.dev">
-                    <input type="email" name="email" placeholder="Your email" required>
-                    <input type="text" name="name" placeholder="Your name" required>
-                    <input type="text" name="company" placeholder="Your company">
-                    <input type="text" name="phone" placeholder="Your phone number">
-                    <input type="text" name="subject" placeholder="Subject" required>
-                    <textarea name="message" placeholder="Your message..." required></textarea>
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" required>
+                        <label for="email" class="required"></label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" id="name" required>
+                        <label for="name" class="required"></label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="company" id="company">
+                        <label for="company"></label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="phone" id="phone">
+                        <label for="phone"></label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" id="subject" required>
+                        <label for="subject" class="required"></label>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" id="message" required></textarea>
+                        <label for="message" class="required"></label>
+                    </div>
                     <input type="hidden" name="redirect" value="https://www.andrelobato.dev/#thank-you">
                     <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                     <button type="submit" class="submit-button">Send</button>

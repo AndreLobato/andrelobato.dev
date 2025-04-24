@@ -20,6 +20,21 @@ function updateContent(lang) {
     servicesList.innerHTML = content.services
         .map(service => `<li>${service}</li>`)
         .join('');
+    
+    // Update form labels and placeholders
+    const form = translations[lang].form;
+    document.querySelector('label[for="email"]').textContent = form.email;
+    document.querySelector('label[for="name"]').textContent = form.name;
+    document.querySelector('label[for="company"]').textContent = form.company;
+    document.querySelector('label[for="phone"]').textContent = form.phone;
+    document.querySelector('label[for="subject"]').textContent = form.subject;
+    document.querySelector('label[for="message"]').textContent = form.message;
+    document.querySelector('.submit-button').textContent = form.send;
+    
+    // Update required fields
+    document.querySelectorAll('.required').forEach(el => {
+        el.setAttribute('data-required', form.required);
+    });
 }
 
 function setLanguage(lang) {
